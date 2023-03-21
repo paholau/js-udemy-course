@@ -32,16 +32,18 @@ function writeToLog(
 }
 
 function calculateResult(calculationType) {
+    const enteredNumber = getUserNumberInput();
     if(
         calculationType !== 'ADD' && 
         calculationType !== 'SUBSTRACT' &&
         calculationType !== 'MULTIPLY' &&
-        calculationType !== 'DIVIDE'
+        calculationType !== 'DIVIDE' ||
+        !enteredNumber
     ) {
         return;
     }
     
-    const enteredNumber = getUserNumberInput();
+    
     const initialResult = currentResult;
     let mathOperator;
     if (calculationType === 'ADD') {
